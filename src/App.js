@@ -1,24 +1,57 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from "react";
 import './App.css';
+import Chat from "./Components/chat/Chat";
+import {connectToServer, socket} from "./socket-service";
+import data from "./data.json";
+import Input from "./Components/input/Input";
+
 
 function App() {
+  const [author, setAuthor] = useState('');
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState(data);
+
+  useEffect(() => {
+    connectToServer()
+        .then((message)=> {
+          console.log(message);
+        });
+  }, []);
+
+  const handleSubmit = () => {
+    const chat ={
+      message,
+      username: author,
+    }
+    socket.send(JSON.stringify(chat));
+
+    socket.onmessage = (websocketData) => {
+      const chatObject = JSON.parse(websocketData.data);
+      console.log('chatObject', chatObject)
+      setMessages([...messages,{
+        message: chatObject.message,
+        username: chatObject.username,
+        date: chatObject.date,
+      }]);
+    }
+
+    setMessage('');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="app">
+        <h3>VOCO</h3>
+        <Chat messages={messages}/>
+
+        <div className="btn-container">
+          <Input placeholder="Username" onChange={setAuthor}
+                 value={author} />
+          <Input placeholder="Message"onChange={setMessage}
+                 value={message} />
+          <button className="buttonSend" onClick={handleSubmit}>SEND</button>
+        </div>
+
+      </div>
   );
 }
 

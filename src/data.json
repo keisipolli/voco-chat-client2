@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "username": "Jane Smith",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at varius diam, vel fermentum ligula. Ut non rutrum diam, eu faucibus nulla. Nunc rutrum sem eros, at convallis ante mattis ac.",
+    "date": "2021-02-01T20:30:52.123Z"
+  },
+  {
+    "id": 2,
+    "username": "John Smith",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at varius diam, vel fermentum ligula. Ut non rutrum diam, eu faucibus nulla. Nunc rutrum sem eros, at convallis ante mattis ac.",
+    "date": "2021-02-01T20:30:52.123Z"
+  },
+  {
+    "id": 3,
+    "username": "Jane Smith",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at varius diam, vel fermentum ligula. Ut non rutrum diam, eu faucibus nulla. Nunc rutrum sem eros, at convallis ante mattis ac.",
+    "date": "2021-02-01T20:30:52.123Z"
+  },
+  {
+    "id": 4,
+    "username": "John Smith",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at varius diam, vel fermentum ligula. Ut non rutrum diam, eu faucibus nulla. Nunc rutrum sem eros, at convallis ante mattis ac.",
+    "date": "2021-02-01T20:30:52.123Z"
+  },
+  {
+    "id": 5,
+    "username": "John Smith",
+    "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at varius diam, vel fermentum ligula. Ut non rutrum diam, eu faucibus nulla. Nunc rutrum sem eros, at convallis ante mattis ac.",
+    "date": "2021-02-01T20:30:52.123Z"
+  }
+]
